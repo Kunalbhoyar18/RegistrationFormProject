@@ -150,7 +150,9 @@ export class HomePageComponent implements OnInit, OnDestroy, AfterViewInit {
     }
 
     ngAfterViewInit() {
-        if(this.getDataF()){
+        // if(this.getDataF()) {
+
+        if(this.getDataF() && this.getDataF().isOnload == false){
             this.open(this.contentRef);
         }
     }
