@@ -40,6 +40,10 @@ export class UserProfileComponent implements OnInit {
                     this.imgUrl = reader.result;
                     let data =this.dataService.getDataF();
                     data.url =this.imgUrl;
+
+                    data.isOnload = false;
+
+
                     this.dataService.setData(data);
                 } else {
                     this.msg = 'Image dimensions must be 310x325 pixels or smaller';
@@ -55,6 +59,13 @@ export class UserProfileComponent implements OnInit {
     }
 
     onEditProfile() { 
+
+        let data =this.dataService.getDataF();
+        
+        data.isOnload = false;
+        this.dataService.setData(data);
+
+
         this.router.navigate(['/']);
     }
 
